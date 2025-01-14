@@ -1,9 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FaceSnap } from '../models/face-snap';
+import { NgClass, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-face-snap',
-  imports: [],
+  imports: [
+    NgStyle,
+    NgClass
+  ],
   templateUrl: './face-snap.component.html',
   styleUrl: './face-snap.component.scss'
 })
@@ -26,6 +30,7 @@ export class FaceSnapComponent implements OnInit {
     this.createdAt = new Date();
     this.snaps = 5;
     this.imageUrl = 'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg';
+    
     this.hasSnapped = false; 
     this.buttonTitle = "Oh Snap!"; 
   }
