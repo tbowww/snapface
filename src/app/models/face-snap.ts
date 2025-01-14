@@ -1,3 +1,5 @@
+import { rxResource } from "@angular/core/rxjs-interop";
+
 export class FaceSnap {
     title: string;
     description: string;
@@ -23,5 +25,10 @@ export class FaceSnap {
 
     setLocation(location: string) {
       this.location = location;
+    }
+
+    withLocation(location: string): FaceSnap {
+      this.setLocation(location);
+      return this;
     }
   }
