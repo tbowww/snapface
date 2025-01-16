@@ -1,5 +1,3 @@
-import { rxResource } from "@angular/core/rxjs-interop";
-
 export class FaceSnap {
     title: string;
     description: string;
@@ -7,6 +5,7 @@ export class FaceSnap {
     snaps: number;
     imageUrl: string;
     location?: string;
+    id: string;
     
     constructor(title: string, description: string, imageUrl: string, createdDate: Date, snaps: number) {
       this.title = title;
@@ -14,6 +13,7 @@ export class FaceSnap {
       this.imageUrl = imageUrl;
       this.createdDate = createdDate;
       this.snaps = snaps;
+      this.id = crypto.randomUUID();
     }
 
     snap() {

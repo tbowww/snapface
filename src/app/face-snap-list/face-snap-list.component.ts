@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FaceSnap } from '../models/face-snap';
-import { FaceSnapComponent } from './face-snap/face-snap.component';
+import { FaceSnapComponent } from '../face-snap/face-snap.component';
 import { FaceSnapsService } from '../services/face-snaps.service';
 
 @Component({
@@ -18,7 +18,5 @@ export class FaceSnapListComponent implements OnInit {
 
   ngOnInit() {
     this.faceSnaps = this.faceSnapsService.getFaceSnaps();
-
-    this.faceSnaps[2].setLocation("In the fields");
   }
 }

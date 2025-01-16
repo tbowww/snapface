@@ -22,7 +22,28 @@ export class FaceSnapsService {
             170
         ).withLocation("Dans les champs")
     ];
-    public getFaceSnaps(): FaceSnap[] {
+
+    getFaceSnaps(): FaceSnap[] {
         return [...this.faceSnaps];
-    }    
+    }   
+
+    getFaceSnapById(id: string): FaceSnap {
+        const foundFaceSnap = this.faceSnaps.find(faceSnap => faceSnap.id === id);
+        if (!foundFaceSnap) {
+          throw new Error('FaceSnap not found!');
+        }
+        return foundFaceSnap;
+    }
+    
+    snapFaceSnapById(id: string, snap: boolean) {
+        const foundFaceSnap = this.faceSnaps.find(faceSnap => faceSnap.id === id);
+        if (!foundFaceSnap) {
+          throw new Error('FaceSnap not found!');
+        }
+        if (snap) {
+            foundFaceSnap.snap();
+        } else {
+            foundFaceSnap.unSnap();
+        }
+    }
 }
